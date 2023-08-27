@@ -17,18 +17,26 @@ function ProductEditForm() {
   });
 
   const updateProduct = (updatedProduct) => {
+    console.log("Updating with:", updatedProduct);
     axios
       .put(`${API}/products/${id}`, updatedProduct)
-      .then(
-        () => {
-          navigate(`/products/${id}`);
-        },
-        (error) => console.error(error)
-      )
+      .then((response) => {
+        console.log('Product updated:', response.data);
+        navigate(`/products/${id}`);
+      })
       .catch((error) => {
-        console.warn("Error updating product:", error);
+        if (error.response) {
+          console.error('Data:', error.response.data);
+          console.error('Status:', error.response.status);
+          console.error('Headers:', error.response.headers);
+        } else if (error.request) {
+          console.error('Request:', error.request);
+        } else {
+          console.error('Error:', error.message);
+        }
       });
   };
+  
 
   const handleTextChange = (event) => {
     setProduct({ ...product, [event.target.id]: event.target.value });
