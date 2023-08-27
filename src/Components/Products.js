@@ -29,18 +29,55 @@ function Products() {
       .catch((error) => console.warn('Error fetching products:', error));
   }, []);
 
+
+
   return (
-    <div className="Products">
-      <h1>Total Products: {products.length}</h1>
-      <h2>Average Product Price: ${averagePrice.toFixed(2)}</h2>
-      <h2>Total Price of Listed Products: ${totalPrice.toFixed(2)}</h2>  {/* Display the total price */}
-      <div className="grid-container">
+    <div style={{
+      padding: "20px",
+      backgroundColor: "#F0F0F0",
+      borderRadius: "10px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      textAlign: "center"  // Center align the text
+    }}>
+      <h1 style={{
+        color: "#008080",
+        fontSize: "2.5em",
+        marginBottom: "20px",
+        fontWeight: "bold",  // Make the text bold
+        lineHeight: "1.2"  // Adjust the line height
+      }}>
+        Total Products: {products.length}
+      </h1>
+      <h2 style={{
+        color: "#00CED1",
+        fontSize: "1.8em",
+        marginBottom: "15px",
+        fontStyle: "italic"  // Make the text italic
+      }}>
+        Average Product Price: ${averagePrice.toFixed(2)}
+      </h2>
+      <h2 style={{
+        color: "#00CED1",
+        fontSize: "1.8em",
+        marginBottom: "15px",
+        textDecoration: "underline"  // Underline the text
+      }}>
+        Total Price of Listed Products: ${totalPrice.toFixed(2)}
+      </h2>
+      <div className="grid-container" style={{
+        marginTop: "30px",  // Add top margin to the grid
+        border: "2px solid #ccc",  // Add a border to the grid
+        borderRadius: "10px"  // Add rounded corners to the grid
+      }}>
         {products.map((product) => {
           return <Product key={product.id} product={product} />;
         })}
       </div>
     </div>
   );
+  
+
+  
 }
 
 export default Products;

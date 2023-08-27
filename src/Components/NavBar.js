@@ -5,34 +5,26 @@ export default function NavBar() {
     <div>
       <nav className="navbar bg-light">
         <div className="container-fluid">
-          <h1>
-            <Link to="/" className="navbar-link">
+          <div>
+            <Link to="/" className="navbar-item" style={{ justifyContent: 'flex-start' }}>
               Home
             </Link>
-          </h1>
+          </div>
           <div>
-            <Link to="/products" className="navbar-button">
+            <Link to="/products" className="navbar-item" style={{ justifyContent: 'center' }}>
               Products
             </Link>
-            <Link to="/products/new" className="navbar-button">
+          </div>
+          <div>
+            <Link to="/products/new" className="navbar-item" style={{ justifyContent: 'flex-end' }}>
               Add New Product
             </Link>
-            {/* <Link to="/users" className="navbar-button">
-              Users
-            </Link> */}
-            {/* <Link to="/reviews" className="navbar-button">
-              Reviews
-            </Link> */}
-            {/* <Link to="/login" className="navbar-button">
-              Login
-            </Link> */}
-            {/* <Link to="/logout" className="navbar-button">
-              Logout
-            </Link> */}
           </div>
         </div>
       </nav>
     </div>
   );
 }
+
+
 

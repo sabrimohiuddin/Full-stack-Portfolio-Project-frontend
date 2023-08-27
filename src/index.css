@@ -16,9 +16,6 @@ body {
   color: var(--text-color);
   transition: all 0.4s ease-in-out;
 }
-
-
-
 /* Commenting out the hover effect
 body:hover {
   background: radial-gradient(circle at bottom left, var(--secondary-color), var(--primary-color));
@@ -26,10 +23,6 @@ body:hover {
   font-weight: bold;
 }
 */
-
-
-
-
 
 /* Image Styles */
 /* Modern Card Style */
@@ -45,9 +38,6 @@ img:hover {
   transform: scale(1.05);
   box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
-
-
-
 
 /* Grid Layout */
 /* Zigzag Layout */
@@ -184,31 +174,72 @@ img:hover {
   transform: scale(1.05);
 }
 
-/* Navbar Link Style */
+
+
+/* Center the navbar both horizontally and vertically */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: var(--primary-color);  /* Background color */
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);  /* Shadow */
+}
+
+/* Updated container styles */
+.container-fluid {
+  display: flex;
+  justify-content: space-between;  /* Distributes items evenly */
+  align-items: center;
+  width: 100%;
+}
+
+/* Center the links */
+.container-fluid div {
+  display: flex;
+  gap: 20px;
+}
+
+/* Additional styles for navbar links */
 .navbar-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 1.2em;  /* Text size */
+  font-family: "Courier New", Courier, monospace;  /* Font family */
 }
 
-.navbar-link:hover {
-  color: var(--secondary-color);
-}
-
-/* Navbar Button Style */
+/* Additional styles for navbar buttons */
 .navbar-button {
-  background-color: var(--primary-color);
-  color: rgb(222, 221, 232);
-  padding: 10px 50px;
-  border-radius: 50px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1.2em;  /* Text size */
+  padding: 10px 20px;  /* Padding */
+  border-radius: 20px;  /* Rounded corners */
 }
 
+/* Hover effects for navbar buttons */
 .navbar-button:hover {
   background-color: var(--secondary-color);
+  transform: scale(1.05);  /* Scale on hover */
 }
+
+/* Shared styles for all navbar items */
+.navbar-item {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: rgb(222, 221, 232);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effects for navbar items */
+.navbar-item:hover {
+  background-color: var(--secondary-color);  /* Background color on hover */
+  transform: scale(1.05);  /* Scale on hover */
+}
+
+
+
+
+
 
 
 /* Animations */
