@@ -1,13 +1,222 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Define CSS variables */
+:root {
+  --primary-color: #008080;  /* Teal */
+  --secondary-color: #00CED1; /* Dark Turquoise */
+  --background-color: #F0F0F0; /* Light Gray */
+  --text-color: #2F4F4F;       /* Dark Slate Gray */
+  --light-gray: #B0C4DE;       /* Light Steel Blue */
+  --dark-gray: #696969;        /* Dim Gray */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Global Styles */
+body {
+  background: linear-gradient(to bottom, var(--background-color), var(--light-gray));
+  margin: 20px;
+  font-family: 'Arial, sans-serif';
+  color: var(--text-color);
+  transition: all 0.4s ease-in-out;
+}
+
+
+
+/* Commenting out the hover effect
+body:hover {
+  background: radial-gradient(circle at bottom left, var(--secondary-color), var(--primary-color));
+  color: #eee;
+  font-weight: bold;
+}
+*/
+
+
+
+
+
+/* Image Styles */
+/* Modern Card Style */
+img {
+  width: 25%;
+  height: auto;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+/* Grid Layout */
+/* Zigzag Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 20px;
+  animation: fadeIn 1.5s ease-out forwards;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+/* Card Styles */
+.card {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(245, 245, 245, 0.9));
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.card-title, .h2-comments {
+  text-align: center;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  transition: color 0.5s ease-in-out;
+}
+
+.card:hover .card-title, .card:hover .h2-comments {
+  color: var(--primary-color);  /* You can use CSS variable for the primary color */
+}
+
+
+/* Button and Text Box Styles */
+.button-container, .showNavigation {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.text-box {
+  width: 70%;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Additional Styles */
+
+/* Visited Text Style */
+.visited-text {
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.visited-text:hover {
+  color: var(--secondary-color);
+}
+
+/* Dots Style */
+.dots {
+  height: 4px;
+  width: 4px;
+  background-color: var(--dark-gray);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dots:hover {
+  background-color: var(--primary-color);
+}
+
+/* Remove Edit Style */
+.remove-edit {
+  margin-left: 12px;
+  transition: all 0.3s ease;
+}
+
+.remove-edit small {
+  color: var(--dark-gray);
+}
+
+.remove-edit small:hover {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* Form Check Input Style */
+.form-check-input {
+  margin-top: 6px;
+  margin-left: -24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-check-input:focus {
+  box-shadow: none;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+
+/* Add Comment Style */
+.addcomment {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.addcomment:hover {
+  transform: scale(1.05);
+}
+
+/* Navbar Link Style */
+.navbar-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: var(--secondary-color);
+}
+
+/* Navbar Button Style */
+.navbar-button {
+  background-color: var(--primary-color);
+  color: rgb(222, 221, 232);
+  padding: 10px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-button:hover {
+  background-color: var(--secondary-color);
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
